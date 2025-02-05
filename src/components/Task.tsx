@@ -68,6 +68,7 @@ function Task({ task, onDelete }: Props) {
                 </button>
                 <br></br>
                 <br></br>
+                
                 <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" onClick={onUpdate}>
                   Update
                 </button>

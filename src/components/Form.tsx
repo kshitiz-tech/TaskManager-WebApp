@@ -3,7 +3,7 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constant";
 import "../style/Login.css";
-import "../functions/Refresh";
+import LoadingIndicator from "./LoadingIndicator";
 
 interface Props {
   route: string;
@@ -18,7 +18,6 @@ const Form = ({ route, method }: Props) => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  console.log(loading);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     setLoading(true);
@@ -38,6 +37,7 @@ const Form = ({ route, method }: Props) => {
         localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
         navigate("/home");
       } else {
+        localStorage.clear()
         navigate("/login");
       }
     } catch (error) {
@@ -98,12 +98,14 @@ const Form = ({ route, method }: Props) => {
                     }}
                   />
                 </div>
+                
+
                 <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
                   Submit
                 </button>
                 </div>
-                
+                {loading && <LoadingIndicator/>}
               </form>
             </div>
           </div>

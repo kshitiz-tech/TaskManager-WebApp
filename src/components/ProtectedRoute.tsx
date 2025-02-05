@@ -69,6 +69,7 @@ function ProtectedRoute({ children }: Props) {
     //check the expiration date
     const tokenExpiration = decoded.exp;
     const user = decoded.name;
+    localStorage.setItem(USERNAME, user);
     //check todays date
     const now = Date.now() / 1000; // to get it in seconds
 
@@ -81,7 +82,7 @@ function ProtectedRoute({ children }: Props) {
     //if not expired, authorized
     else {
       setIsAuthorized(true);
-      localStorage.setItem(USERNAME, user);
+      
     }
 
     //check if it is expired or not

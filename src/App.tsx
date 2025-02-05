@@ -11,17 +11,12 @@ import Update from "./pages/Update";
 import Layout from "./components/Layout";
 import { useEffect } from "react";
 import Public from "./pages/Public";
+import Layout_User from "./components/Layout_User";
 
-//creating a type for the data that is going to be accessed from api
-export type Tasks = {
-  id: number;
-  title: string;
-  body: string;
-};
+
 
 function Refresh(route: string) {
   const navigate = useNavigate();
-
 
   useEffect(() => {
     localStorage.clear();
@@ -30,9 +25,8 @@ function Refresh(route: string) {
   }, [navigate]);
 }
 
-
-function FirstHome(){
-  return <Home/>
+function FirstHome() {
+  return <Home />;
 }
 
 function LogOut() {
@@ -50,21 +44,23 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route 
+        <Route path="/" element={<Layout_User />}>
+          <Route
             path="/home" 
             element={
               <ProtectedRoute>
                 <FirstHome />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route path="/" element={<Public />} />
+        </Route>
+        <Route path="/update" element={<Update />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/public" element={<Public />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterandLogOut />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/logout" element={<LogOut />} />
-          <Route path="/update" element={<Update />} />
         </Route>
       </Routes>
     </BrowserRouter>

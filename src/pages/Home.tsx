@@ -14,6 +14,7 @@ interface TaskType {
 }
 
 const Home = () => {
+
   const [tasks, setTasks] = useState<TaskType[]>([]);
   const [task, setTask] = useState({
     id: 0,
