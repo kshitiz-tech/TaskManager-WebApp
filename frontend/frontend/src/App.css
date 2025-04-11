@@ -1,0 +1,27 @@
+.TaskForm {
+  padding:20px auto;
+  margin:20px auto;
+  align-items: center;
+  border: 2px solid #eeee;
+  max-width: 500px;
+  box-sizing: border-box;
+
+
+}
+
+.title{
+  padding:2px auto;
+  margin:2px auto;
+  margin-bottom: 5px;
+  max-width: fit-content;
+
+
+}
+.card {
+  width: 18rem;
+
+}
+form {
+  padding: 20px;
+
+}

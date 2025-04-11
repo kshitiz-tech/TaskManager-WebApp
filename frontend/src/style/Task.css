@@ -31,3 +31,19 @@
   .delete-button:hover {
     background-color: #d32f2f; /* Darker red */
   }
+
+.TaskForm {
+    padding:20px auto;
+    margin:20px auto;
+    align-items: center;
+    border: 2px solid #eeee;
+    max-width: 500px;
+    box-sizing: border-box;
+  
+  
+  }
+
+.arrangement {
+  display: flex;
+  justify-content: space-around;
+}

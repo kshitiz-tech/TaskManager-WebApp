@@ -1,0 +1,26 @@
+.login-container {
+    padding:20px auto;
+    margin:20px auto;
+    margin-top:200px;
+
+    align-items: center;
+    border: 2px solid #eeee;
+    max-width: 500px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: bisque;
+
+}
+
+.title{
+    padding:2px auto;
+    margin:2px auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: fit-content;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+
+  
+  
+  }
